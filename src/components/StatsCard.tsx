@@ -24,8 +24,8 @@ export const StatsCard = ({ title, value, change, changeType, icon: Icon }: Stat
           <p className="text-2xl font-bold text-gray-900 mt-1">{value}</p>
           <p className={`text-sm mt-1 ${changeColor}`}>{change}</p>
         </div>
-        <div className="p-3 bg-gradient-to-br from-purple-100 to-pink-100 rounded-lg">
-          <Icon className="w-6 h-6 text-purple-600" />
+        <div className="p-3 bg-gradient-to-br from-[#0fa1b8]/10 to-[#06b6d4]/20 rounded-lg">
+          <Icon className="w-6 h-6 text-[#0fa1b8]" />
         </div>
       </div>
     </div>

@@ -32,12 +32,12 @@ export const DashboardChart = () => {
             dataKey="sales" 
             stroke="url(#salesGradient)" 
             strokeWidth={3}
-            dot={{ fill: '#8b5cf6', strokeWidth: 2, r: 4 }}
+            dot={{ fill: '#0fa1b8', strokeWidth: 2, r: 4 }}
           />
           <defs>
             <linearGradient id="salesGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#8b5cf6" />
-              <stop offset="100%" stopColor="#ec4899" />
+              <stop offset="0%" stopColor="#0fa1b8" />
+              <stop offset="100%" stopColor="#06b6d4" />
             </linearGradient>
           </defs>
         </LineChart>
