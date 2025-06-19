@@ -1,17 +1,18 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Plus, X, Upload } from 'lucide-react';
 
 interface ProductFormData {
   images: string[];
   title: string;
+  category: string;
+  subcategory: string;
   skinType: string;
   shortDescription: string;
   mrp: string;
@@ -31,10 +32,43 @@ interface ProductFormData {
   keyIngredients: Array<{ image: string; text: string }>;
 }
 
+// Mock data for categories and subcategories
+const categories = [
+  {
+    id: 'cleansers',
+    name: 'Cleansers',
+    subcategories: [
+      { id: 'face-wash', name: 'Face Wash' },
+      { id: 'face-scrub', name: 'Face Scrub' },
+      { id: 'micellar-water', name: 'Micellar Water' }
+    ]
+  },
+  {
+    id: 'moisturizers',
+    name: 'Moisturizers',
+    subcategories: [
+      { id: 'day-cream', name: 'Day Cream' },
+      { id: 'night-cream', name: 'Night Cream' },
+      { id: 'face-oil', name: 'Face Oil' }
+    ]
+  },
+  {
+    id: 'treatments',
+    name: 'Treatments',
+    subcategories: [
+      { id: 'serum', name: 'Serum' },
+      { id: 'face-mask', name: 'Face Mask' },
+      { id: 'spot-treatment', name: 'Spot Treatment' }
+    ]
+  }
+];
+
 export const ProductForm = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
   const [formData, setFormData] = useState<ProductFormData>({
     images: [],
     title: '',
+    category: '',
+    subcategory: '',
     skinType: '',
     shortDescription: '',
     mrp: '',
@@ -51,6 +85,8 @@ export const ProductForm = ({ isOpen, onClose }: { isOpen: boolean; onClose: () 
   });
 
   const [newIngredient, setNewIngredient] = useState('');
+
+  const selectedCategory = categories.find(cat => cat.id === formData.category);
 
   const addVariation = () => {
     setFormData(prev => ({
@@ -169,6 +205,47 @@ export const ProductForm = ({ isOpen, onClose }: { isOpen: boolean; onClose: () 
                   onChange={(e) => setFormData(prev => ({ ...prev, title: e.target.value }))}
                   placeholder="e.g., Neem & Turmeric Face Wash"
                 />
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <Label htmlFor="category">Category</Label>
+                  <Select 
+                    value={formData.category} 
+                    onValueChange={(value) => setFormData(prev => ({ ...prev, category: value, subcategory: '' }))}
+                  >
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select category" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {categories.map(category => (
+                        <SelectItem key={category.id} value={category.id}>
+                          {category.name}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div>
+                  <Label htmlFor="subcategory">Subcategory</Label>
+                  <Select 
+                    value={formData.subcategory} 
+                    onValueChange={(value) => setFormData(prev => ({ ...prev, subcategory: value }))}
+                    disabled={!formData.category}
+                  >
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select subcategory" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {selectedCategory?.subcategories.map(subcategory => (
+                        <SelectItem key={subcategory.id} value={subcategory.id}>
+                          {subcategory.name}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
               </div>
 
               <div>
