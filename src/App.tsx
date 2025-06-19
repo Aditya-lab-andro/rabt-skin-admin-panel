@@ -22,7 +22,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <div className="flex min-h-screen bg-gray-50 w-full">
+        <div className="flex min-h-screen w-full">
           <AdminSidebar />
           <main className="flex-1 overflow-auto">
             <Routes>

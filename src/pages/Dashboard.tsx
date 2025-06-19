@@ -1,84 +1,124 @@
 
 import { StatsCard } from '@/components/StatsCard';
 import { DashboardChart } from '@/components/DashboardChart';
-import { Package, ShoppingCart, Users, TrendingUp } from 'lucide-react';
+import { AnimatedBackground } from '@/components/ui/animated-background';
+import { GradientCard } from '@/components/ui/gradient-card';
+import { 
+  TrendingUp, 
+  Package, 
+  Users, 
+  ShoppingCart,
+  DollarSign,
+  Activity
+} from 'lucide-react';
 
 export const Dashboard = () => {
+  const stats = [
+    {
+      title: 'Total Revenue',
+      value: '$54,239',
+      change: '+12.5% from last month',
+      changeType: 'positive' as const,
+      icon: DollarSign
+    },
+    {
+      title: 'Total Orders',
+      value: '1,429',
+      change: '+8.2% from last month', 
+      changeType: 'positive' as const,
+      icon: ShoppingCart
+    },
+    {
+      title: 'Active Products',
+      value: '247',
+      change: '+3 new products',
+      changeType: 'positive' as const,
+      icon: Package
+    },
+    {
+      title: 'Active Customers',
+      value: '892',
+      change: '+15.3% from last month',
+      changeType: 'positive' as const,
+      icon: Users
+    }
+  ];
+
   return (
-    <div className="p-6 space-y-6">
-      {/* Header */}
-      <div>
-        <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
-        <p className="text-gray-600 mt-1">Welcome back! Here's what's happening with your store.</p>
-      </div>
+    <AnimatedBackground>
+      <div className="p-8">
+        {/* Header */}
+        <div className="mb-8">
+          <h1 className="text-3xl font-bold bg-gradient-to-r from-[#0fa1b8] to-[#06b6d4] bg-clip-text text-transparent">
+            Dashboard
+          </h1>
+          <p className="text-gray-600 mt-2">Welcome back! Here's what's happening with your store today.</p>
+        </div>
 
-      {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <StatsCard
-          title="Total Products"
-          value="1,234"
-          change="+12% from last month"
-          changeType="positive"
-          icon={Package}
-        />
-        <StatsCard
-          title="Total Orders"
-          value="856"
-          change="+8% from last month"
-          changeType="positive"
-          icon={ShoppingCart}
-        />
-        <StatsCard
-          title="Total Customers"
-          value="2,345"
-          change="+15% from last month"
-          changeType="positive"
-          icon={Users}
-        />
-        <StatsCard
-          title="Revenue"
-          value="$48,250"
-          change="+23% from last month"
-          changeType="positive"
-          icon={TrendingUp}
-        />
-      </div>
+        {/* Stats Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          {stats.map((stat, index) => (
+            <div key={index} className="transform hover:scale-105 transition-transform duration-200">
+              <StatsCard {...stat} />
+            </div>
+          ))}
+        </div>
 
-      {/* Charts Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <DashboardChart />
-        
-        {/* Recent Orders */}
-        <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">Recent Orders</h3>
-          <div className="space-y-4">
+        {/* Charts Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+          <GradientCard gradient>
+            <DashboardChart />
+          </GradientCard>
+          
+          <GradientCard gradient className="p-6">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+              <Activity className="w-5 h-5 mr-2 text-[#0fa1b8]" />
+              Recent Activity
+            </h3>
+            <div className="space-y-4">
+              {[
+                { action: 'New order placed', time: '2 minutes ago', status: 'success' },
+                { action: 'Product added to inventory', time: '15 minutes ago', status: 'info' },
+                { action: 'Customer registered', time: '1 hour ago', status: 'success' },
+                { action: 'Low stock alert', time: '2 hours ago', status: 'warning' }
+              ].map((activity, index) => (
+                <div key={index} className="flex items-center justify-between p-3 rounded-lg bg-gray-50/50">
+                  <div>
+                    <p className="font-medium text-gray-900">{activity.action}</p>
+                    <p className="text-sm text-gray-600">{activity.time}</p>
+                  </div>
+                  <div className={`w-2 h-2 rounded-full ${
+                    activity.status === 'success' ? 'bg-green-500' :
+                    activity.status === 'info' ? 'bg-[#0fa1b8]' :
+                    'bg-yellow-500'
+                  }`} />
+                </div>
+              ))}
+            </div>
+          </GradientCard>
+        </div>
+
+        {/* Quick Actions */}
+        <GradientCard className="p-6">
+          <h3 className="text-lg font-semibold text-gray-900 mb-4">Quick Actions</h3>
+          <div className="flex flex-wrap gap-4">
             {[
-              { id: '#1234', customer: 'Sarah Johnson', product: 'Vitamin C Serum', amount: '$45.00', status: 'Completed' },
-              { id: '#1235', customer: 'Emma Davis', product: 'Hyaluronic Moisturizer', amount: '$32.00', status: 'Processing' },
-              { id: '#1236', customer: 'Michael Brown', product: 'Gentle Cleanser', amount: '$28.00', status: 'Shipped' },
-              { id: '#1237', customer: 'Jessica Wilson', product: 'Anti-Aging Cream', amount: '$65.00', status: 'Pending' },
-            ].map((order) => (
-              <div key={order.id} className="flex items-center justify-between py-3 border-b border-gray-100 last:border-b-0">
-                <div>
-                  <p className="font-medium text-gray-900">{order.customer}</p>
-                  <p className="text-sm text-gray-600">{order.product}</p>
-                </div>
-                <div className="text-right">
-                  <p className="font-medium text-gray-900">{order.amount}</p>
-                  <span className={`text-xs px-2 py-1 rounded-full ${
-                    order.status === 'Completed' ? 'bg-green-100 text-green-800' :
-                    order.status === 'Processing' ? 'bg-yellow-100 text-yellow-800' :
-                    order.status === 'Shipped' ? 'bg-blue-100 text-blue-800' :
-                    'bg-gray-100 text-gray-800'
-                  }`}>
-                    {order.status}
-                  </span>
-                </div>
-              </div>
+              { label: 'Add New Product', icon: Package },
+              { label: 'View Orders', icon: ShoppingCart },
+              { label: 'Manage Categories', icon: TrendingUp },
+              { label: 'Send Newsletter', icon: Users }
+            ].map((action, index) => (
+              <button
+                key={index}
+                className="flex items-center px-4 py-2 bg-gradient-to-r from-[#0fa1b8] to-[#06b6d4] text-white rounded-lg hover:shadow-lg transition-all duration-200 transform hover:scale-105"
+              >
+                <action.icon className="w-4 h-4 mr-2" />
+                {action.label}
+              </button>
             ))}
           </div>
-        </div>
+        </GradientCard>
       </div>
-    </div>
+    </AnimatedBackground>
   );
 };
