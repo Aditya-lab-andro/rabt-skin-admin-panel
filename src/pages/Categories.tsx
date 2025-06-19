@@ -8,57 +8,57 @@ import { CategoryForm } from '@/components/CategoryForm';
 const categories = [
   { 
     id: 1, 
-    name: 'आयुर्वेदिक क्लींज़र', 
-    description: 'नीम, हल्दी और जड़ी-बूटियों के साथ पारंपरिक सफाई उत्पाद', 
+    name: 'Ayurvedic Cleansers', 
+    description: 'Traditional cleansing products with neem, turmeric and herbs', 
     products: 15, 
     status: 'Active',
     image: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=200&h=200&fit=crop',
-    subcategories: ['फेस वाश', 'बॉडी वाश', 'हैंड वाश']
+    subcategories: ['Face Wash', 'Body Wash', 'Hand Wash']
   },
   { 
     id: 2, 
-    name: 'प्राकृतिक मॉइस्चराइज़र', 
-    description: 'गुलाब, एलोवेरा और प्राकृतिक तेलों के साथ हाइड्रेटिंग क्रीम', 
+    name: 'Natural Moisturizers', 
+    description: 'Hydrating creams with rose, aloe vera and natural oils', 
     products: 22, 
     status: 'Active',
     image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=200&h=200&fit=crop',
-    subcategories: ['डे क्रीम', 'नाइट क्रीम', 'बॉडी लोशन']
+    subcategories: ['Day Cream', 'Night Cream', 'Body Lotion']
   },
   { 
     id: 3, 
-    name: 'हर्बल सीरम', 
-    description: 'कुमकुमादि, आंवला से विटामिन सी के साथ कॉन्सेंट्रेटेड ट्रीटमेंट', 
+    name: 'Herbal Serums', 
+    description: 'Concentrated treatments with kumkumadi, vitamin C from amla', 
     products: 18, 
     status: 'Active',
     image: 'https://images.unsplash.com/photo-1556228841-d7d964c9a90d?w=200&h=200&fit=crop',
-    subcategories: ['एंटी-एजिंग सीरम', 'ब्राइटनिंग सीरम', 'हाइड्रेटिंग सीरम']
+    subcategories: ['Anti-Aging Serum', 'Brightening Serum', 'Hydrating Serum']
   },
   { 
     id: 4, 
-    name: 'सनस्क्रीन', 
-    description: 'जिंक ऑक्साइड और प्लांट एक्सट्रैक्ट्स के साथ प्राकृतिक यूवी प्रोटेक्शन', 
+    name: 'Sunscreen', 
+    description: 'Natural UV protection with zinc oxide and plant extracts', 
     products: 8, 
     status: 'Active',
     image: 'https://images.unsplash.com/photo-1556228838-2b1ff73c3a87?w=200&h=200&fit=crop',
-    subcategories: ['SPF 30', 'SPF 50', 'टिंटेड सनस्क्रीन']
+    subcategories: ['SPF 30', 'SPF 50', 'Tinted Sunscreen']
   },
   { 
     id: 5, 
-    name: 'पारंपरिक स्क्रब', 
-    description: 'चंदन, बेसन और जड़ी-बूटियों के साथ एक्सफोलिएटिंग उत्पाद', 
+    name: 'Traditional Scrubs', 
+    description: 'Exfoliating products with sandalwood, besan and herbs', 
     products: 12, 
     status: 'Active',
     image: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=200&h=200&fit=crop',
-    subcategories: ['फेस स्क्रब', 'बॉडी स्क्रब', 'लिप स्क्रब']
+    subcategories: ['Face Scrub', 'Body Scrub', 'Lip Scrub']
   },
   { 
     id: 6, 
-    name: 'आंखों की देखभाल', 
-    description: 'पारंपरिक सामग्री के साथ विशेष काजल और अंडर-आई ट्रीटमेंट', 
+    name: 'Eye Care', 
+    description: 'Special kajal and under-eye treatments with traditional ingredients', 
     products: 6, 
     status: 'Inactive',
     image: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=200&h=200&fit=crop',
-    subcategories: ['काजल', 'आई क्रीम', 'आई सीरम']
+    subcategories: ['Kajal', 'Eye Cream', 'Eye Serum']
   },
 ];
 
@@ -76,15 +76,15 @@ export const Categories = () => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">श्रेणियां (Categories)</h1>
-          <p className="text-gray-600 mt-1">अपने आयुर्वेदिक उत्पादों को श्रेणियों में व्यवस्थित करें</p>
+          <h1 className="text-3xl font-bold text-gray-900">Categories</h1>
+          <p className="text-gray-600 mt-1">Organize your Ayurvedic products into categories</p>
         </div>
         <Button 
           className="bg-gradient-to-r from-[#0fa1b8] to-[#06b6d4] hover:from-[#0e8a9c] hover:to-[#0891b2]"
           onClick={() => setIsCategoryFormOpen(true)}
         >
           <Plus className="w-4 h-4 mr-2" />
-          नई श्रेणी जोड़ें
+          Add New Category
         </Button>
       </div>
 
@@ -93,7 +93,7 @@ export const Categories = () => {
         <div className="relative">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
           <Input
-            placeholder="श्रेणियां खोजें..."
+            placeholder="Search categories..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="pl-10"
@@ -122,7 +122,7 @@ export const Categories = () => {
                 <span className={`px-2 py-1 text-xs rounded-full ${
                   category.status === 'Active' ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'
                 }`}>
-                  {category.status === 'Active' ? 'सक्रिय' : 'निष्क्रिय'}
+                  {category.status}
                 </span>
               </div>
               
@@ -131,7 +131,7 @@ export const Categories = () => {
               
               {/* Subcategories */}
               <div className="mb-4">
-                <p className="text-xs font-medium text-gray-500 mb-2">उप-श्रेणियां:</p>
+                <p className="text-xs font-medium text-gray-500 mb-2">Subcategories:</p>
                 <div className="flex flex-wrap gap-1">
                   {category.subcategories.map((sub, index) => (
                     <span key={index} className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">
@@ -142,7 +142,7 @@ export const Categories = () => {
               </div>
               
               <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-500">{category.products} उत्पाद</span>
+                <span className="text-sm text-gray-500">{category.products} products</span>
                 <div className="flex items-center space-x-2">
                   <Button variant="ghost" size="sm">
                     <Edit className="w-4 h-4" />
