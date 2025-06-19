@@ -5,12 +5,12 @@ import { Input } from '@/components/ui/input';
 import { Search, Filter, Download, Eye } from 'lucide-react';
 
 const orders = [
-  { id: '#1234', customer: 'Sarah Johnson', email: 'sarah@email.com', total: '$145.00', status: 'Completed', date: '2024-01-15', items: 3 },
-  { id: '#1235', customer: 'Emma Davis', email: 'emma@email.com', total: '$89.50', status: 'Processing', date: '2024-01-14', items: 2 },
-  { id: '#1236', customer: 'Michael Brown', email: 'michael@email.com', total: '$67.00', status: 'Shipped', date: '2024-01-14', items: 1 },
-  { id: '#1237', customer: 'Jessica Wilson', email: 'jessica@email.com', total: '$203.25', status: 'Pending', date: '2024-01-13', items: 4 },
-  { id: '#1238', customer: 'David Lee', email: 'david@email.com', total: '$156.75', status: 'Completed', date: '2024-01-12', items: 3 },
-  { id: '#1239', customer: 'Sophie Miller', email: 'sophie@email.com', total: '$92.00', status: 'Cancelled', date: '2024-01-12', items: 2 },
+  { id: '#1234', customer: 'Priya Sharma', email: 'priya@email.com', total: '₹1,450', status: 'Completed', date: '2024-01-15', items: 3 },
+  { id: '#1235', customer: 'Ananya Patel', email: 'ananya@email.com', total: '₹895', status: 'Processing', date: '2024-01-14', items: 2 },
+  { id: '#1236', customer: 'Rahul Gupta', email: 'rahul@email.com', total: '₹670', status: 'Shipped', date: '2024-01-14', items: 1 },
+  { id: '#1237', customer: 'Kavya Reddy', email: 'kavya@email.com', total: '₹2,032', status: 'Pending', date: '2024-01-13', items: 4 },
+  { id: '#1238', customer: 'Arjun Singh', email: 'arjun@email.com', total: '₹1,568', status: 'Completed', date: '2024-01-12', items: 3 },
+  { id: '#1239', customer: 'Sneha Joshi', email: 'sneha@email.com', total: '₹920', status: 'Cancelled', date: '2024-01-12', items: 2 },
 ];
 
 export const Orders = () => {

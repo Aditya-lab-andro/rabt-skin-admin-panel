@@ -5,11 +5,11 @@ import { Input } from '@/components/ui/input';
 import { Plus, Search, Edit, Trash2, Eye } from 'lucide-react';
 
 const products = [
-  { id: 1, name: 'Vitamin C Serum', category: 'Serums', price: '$45.00', stock: 120, status: 'Active', image: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=100&h=100&fit=crop' },
-  { id: 2, name: 'Hyaluronic Moisturizer', category: 'Moisturizers', price: '$32.00', stock: 85, status: 'Active', image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=100&h=100&fit=crop' },
-  { id: 3, name: 'Gentle Cleanser', category: 'Cleansers', price: '$28.00', stock: 200, status: 'Active', image: 'https://images.unsplash.com/photo-1556228841-d7d964c9a90d?w=100&h=100&fit=crop' },
-  { id: 4, name: 'Anti-Aging Cream', category: 'Moisturizers', price: '$65.00', stock: 45, status: 'Active', image: 'https://images.unsplash.com/photo-1556228838-2b1ff73c3a87?w=100&h=100&fit=crop' },
-  { id: 5, name: 'Exfoliating Scrub', category: 'Exfoliants', price: '$35.00', stock: 0, status: 'Out of Stock', image: 'https://images.unsplash.com/photo-1556228838-2b1ff73c3a87?w=100&h=100&fit=crop' },
+  { id: 1, name: 'Neem & Turmeric Face Wash', category: 'Cleansers', price: '₹450', stock: 120, status: 'Active', image: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=100&h=100&fit=crop' },
+  { id: 2, name: 'Rose & Aloe Moisturizer', category: 'Moisturizers', price: '₹320', stock: 85, status: 'Active', image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=100&h=100&fit=crop' },
+  { id: 3, name: 'Ayurvedic Gentle Cleanser', category: 'Cleansers', price: '₹280', stock: 200, status: 'Active', image: 'https://images.unsplash.com/photo-1556228841-d7d964c9a90d?w=100&h=100&fit=crop' },
+  { id: 4, name: 'Kumkumadi Anti-Aging Cream', category: 'Moisturizers', price: '₹650', stock: 45, status: 'Active', image: 'https://images.unsplash.com/photo-1556228838-2b1ff73c3a87?w=100&h=100&fit=crop' },
+  { id: 5, name: 'Sandalwood Exfoliating Scrub', category: 'Exfoliants', price: '₹350', stock: 0, status: 'Out of Stock', image: 'https://images.unsplash.com/photo-1556228838-2b1ff73c3a87?w=100&h=100&fit=crop' },
 ];
 
 export const Products = () => {
@@ -26,7 +26,7 @@ export const Products = () => {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <h1 className="text-3xl font-bold text-gray-900">Products</h1>
-          <p className="text-gray-600 mt-1">Manage your skincare product inventory</p>
+          <p className="text-gray-600 mt-1">Manage your Ayurvedic skincare product inventory</p>
         </div>
         <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700">
           <Plus className="w-4 h-4 mr-2" />

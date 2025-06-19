@@ -1,4 +1,3 @@
-
 import { StatsCard } from '@/components/StatsCard';
 import { DashboardChart } from '@/components/DashboardChart';
 import { AnimatedBackground } from '@/components/ui/animated-background';
@@ -16,7 +15,7 @@ export const Dashboard = () => {
   const stats = [
     {
       title: 'Total Revenue',
-      value: '$54,239',
+      value: '₹54,23,900',
       change: '+12.5% from last month',
       changeType: 'positive' as const,
       icon: DollarSign
@@ -52,7 +51,7 @@ export const Dashboard = () => {
           <h1 className="text-3xl font-bold bg-gradient-to-r from-[#0fa1b8] to-[#06b6d4] bg-clip-text text-transparent">
             Dashboard
           </h1>
-          <p className="text-gray-600 mt-2">Welcome back! Here's what's happening with your store today.</p>
+          <p className="text-gray-600 mt-2">Welcome back! Here's what's happening with your Ayurvedic skincare store today.</p>
         </div>
 
         {/* Stats Grid */}
@@ -77,10 +76,10 @@ export const Dashboard = () => {
             </h3>
             <div className="space-y-4">
               {[
-                { action: 'New order placed', time: '2 minutes ago', status: 'success' },
-                { action: 'Product added to inventory', time: '15 minutes ago', status: 'info' },
-                { action: 'Customer registered', time: '1 hour ago', status: 'success' },
-                { action: 'Low stock alert', time: '2 hours ago', status: 'warning' }
+                { action: 'New order from Mumbai placed', time: '2 minutes ago', status: 'success' },
+                { action: 'Neem face wash added to inventory', time: '15 minutes ago', status: 'info' },
+                { action: 'Customer from Delhi registered', time: '1 hour ago', status: 'success' },
+                { action: 'Low stock alert - Rose moisturizer', time: '2 hours ago', status: 'warning' }
               ].map((activity, index) => (
                 <div key={index} className="flex items-center justify-between p-3 rounded-lg bg-gray-50/50">
                   <div>

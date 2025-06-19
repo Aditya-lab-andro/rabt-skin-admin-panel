@@ -5,12 +5,12 @@ import { Input } from '@/components/ui/input';
 import { Plus, Search, Edit, Trash2, Package } from 'lucide-react';
 
 const categories = [
-  { id: 1, name: 'Cleansers', description: 'Gentle cleansing products for all skin types', products: 15, status: 'Active' },
-  { id: 2, name: 'Moisturizers', description: 'Hydrating creams and lotions', products: 22, status: 'Active' },
-  { id: 3, name: 'Serums', description: 'Concentrated treatments for specific skin concerns', products: 18, status: 'Active' },
-  { id: 4, name: 'Sunscreens', description: 'UV protection for daily use', products: 8, status: 'Active' },
-  { id: 5, name: 'Exfoliants', description: 'Chemical and physical exfoliating products', products: 12, status: 'Active' },
-  { id: 6, name: 'Eye Care', description: 'Specialized products for the delicate eye area', products: 6, status: 'Inactive' },
+  { id: 1, name: 'Ayurvedic Cleansers', description: 'Traditional cleansing products with neem, turmeric, and herbs', products: 15, status: 'Active' },
+  { id: 2, name: 'Natural Moisturizers', description: 'Hydrating creams with rose, aloe vera, and natural oils', products: 22, status: 'Active' },
+  { id: 3, name: 'Herbal Serums', description: 'Concentrated treatments with kumkumadi, vitamin C from amla', products: 18, status: 'Active' },
+  { id: 4, name: 'Sunscreens', description: 'Natural UV protection with zinc oxide and plant extracts', products: 8, status: 'Active' },
+  { id: 5, name: 'Traditional Scrubs', description: 'Exfoliating products with sandalwood, gram flour, and herbs', products: 12, status: 'Active' },
+  { id: 6, name: 'Eye Care', description: 'Specialized kajal and under-eye treatments with traditional ingredients', products: 6, status: 'Inactive' },
 ];
 
 export const Categories = () => {
@@ -27,7 +27,7 @@ export const Categories = () => {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <h1 className="text-3xl font-bold text-gray-900">Categories</h1>
-          <p className="text-gray-600 mt-1">Organize your products into categories</p>
+          <p className="text-gray-600 mt-1">Organize your Ayurvedic products into categories</p>
         </div>
         <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700">
           <Plus className="w-4 h-4 mr-2" />

@@ -29,24 +29,24 @@ export const Settings = () => {
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Store Email</label>
-                  <Input defaultValue="admin@rabt.com" />
+                  <Input defaultValue="admin@rabt.in" />
                 </div>
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Store Description</label>
                 <Textarea 
-                  defaultValue="Premium skincare products for all skin types. Natural ingredients, proven results."
+                  defaultValue="Premium Ayurvedic skincare products crafted with traditional Indian ingredients. Natural solutions for healthy, glowing skin."
                   className="min-h-[100px]"
                 />
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
-                  <Input defaultValue="+1 (555) 123-4567" />
+                  <Input defaultValue="+91 98765 43210" />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Support Email</label>
-                  <Input defaultValue="support@rabt.com" />
+                  <Input defaultValue="support@rabt.in" />
                 </div>
               </div>
             </div>
@@ -97,25 +97,33 @@ export const Settings = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Currency</label>
-                  <Input defaultValue="USD" />
+                  <Input defaultValue="INR" />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Tax Rate (%)</label>
-                  <Input defaultValue="8.5" />
+                  <label className="block text-sm font-medium text-gray-700 mb-2">GST Rate (%)</label>
+                  <Input defaultValue="18" />
                 </div>
               </div>
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="font-medium text-gray-900">Accept Credit Cards</p>
-                  <p className="text-sm text-gray-600">Enable credit card payments</p>
+                  <p className="font-medium text-gray-900">Accept UPI Payments</p>
+                  <p className="text-sm text-gray-600">Enable UPI payments (GPay, PhonePe, Paytm)</p>
                 </div>
                 <Switch defaultChecked />
               </div>
               <Separator />
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="font-medium text-gray-900">Accept PayPal</p>
-                  <p className="text-sm text-gray-600">Enable PayPal payments</p>
+                  <p className="font-medium text-gray-900">Accept Net Banking</p>
+                  <p className="text-sm text-gray-600">Enable net banking payments</p>
+                </div>
+                <Switch defaultChecked />
+              </div>
+              <Separator />
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="font-medium text-gray-900">Accept Cards</p>
+                  <p className="text-sm text-gray-600">Enable debit/credit card payments</p>
                 </div>
                 <Switch defaultChecked />
               </div>
@@ -157,7 +165,7 @@ export const Settings = () => {
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-600">Monthly Revenue</span>
-                <span className="font-medium">$48,250</span>
+                <span className="font-medium">₹4,82,500</span>
               </div>
             </div>
           </div>
