@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/526d4f6b-d99f-4cd9-aabf-db1182c6b94d
+**URL**: [https://lovable.dev/projects/526d4f6b-d99f-4cd9-aabf-db1182c6b94d](https://preview--rabt-skin-admin-panel.lovable.app/)
 
 ## How can I edit this code?
 
